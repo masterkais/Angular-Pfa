@@ -1,0 +1,14 @@
+<div fxLayoutAlign="center" *ngFor="let component of articleDB" class="DivBody">
+    <mat-card class="example-card">
+        <img mat-card-image [src]="component.picture" >
+        <mat-card-content>
+        <p class="titlestyle"><i><b>{{component.title}}</b></i></p>
+          <p>
+            {{component.description}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions fxLayoutAlign="end">
+          <button mat-button class="btnReadmore" routerLink="">Read More</button>
+        </mat-card-actions>
+      </mat-card>
+</div>

@@ -1,0 +1,35 @@
+
+
+
+<div class="FormCenter">
+
+
+<form (ngSubmit)="onSubmit()" [formGroup]="form" *ngIf="!!form">
+
+  <h2><i><u>
+    {{isFormInEditMode() ? 'Edit Member' : 'Add New Member'}}
+  </u></i>
+  </h2>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Cin</mat-label>
+      <input matInput placeholder="Cin" formControlName="Cin">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Name" formControlName="Name">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>CV</mat-label>
+        <input matInput placeholder="CV" formControlName="CV">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Type</mat-label>
+        <input matInput placeholder="Type" formControlName="Type">
+      </mat-form-field>
+      <button type="submit"  mat-raised-button color="primary" >Submit</button>
+  </form>
+</div>

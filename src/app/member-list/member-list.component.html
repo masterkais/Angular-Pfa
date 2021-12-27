@@ -1,0 +1,72 @@
+
+<div><br></div>
+
+
+<div fxLayout="row" fxLayoutAlign="end center" class="createbutton">
+    <button routerLink="/create" mat-raised-button color="primary" ><mat-icon>add</mat-icon> Create New</button>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="start" class="filterfield">
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
+  </mat-form-field></div>   
+
+<div fxLayout="row" fxLayoutAlign="center">
+
+<table mat-table [dataSource]="DataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="Id">
+      <th mat-header-cell class="px-12" *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.Id}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="Cin">
+      <th mat-header-cell class="px-12" *matHeaderCellDef> CIN </th>
+      <td mat-cell *matCellDef="let element"> {{element.Cin}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Name">
+      <th mat-header-cell class="px-12" *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+    </ng-container>
+              
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Type">
+        <th mat-header-cell class="px-12" *matHeaderCellDef> Type </th>
+        <td mat-cell *matCellDef="let element"> {{element.Type}} </td>
+    </ng-container>  
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="CV">
+        <th mat-header-cell class="px-12" *matHeaderCellDef> CV </th>
+        <td mat-cell *matCellDef="let element">
+        <a [href]="element.CV" target="_blank"><mat-icon color="primary" >picture_as_pdf</mat-icon></a>
+        </td>
+    </ng-container>
+
+         <!-- Action Column -->
+    <ng-container matColumnDef="action" stickyEnd>
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let element"> 
+        <a routerLink="/{{element.Id}}/edit" ><mat-icon color="primary">edit</mat-icon></a>
+        <a (click)="onRemoveAccount(element.Id)"><mat-icon>delete</mat-icon></a>  
+        </td>
+      </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="CreatedDate">
+        <th mat-header-cell class="px-12" *matHeaderCellDef> Created Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.CreatedDate}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

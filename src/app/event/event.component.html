@@ -1,0 +1,18 @@
+
+<div fxLayoutAlign="center"  *ngFor="let event of popular" class="DivBody">
+    <mat-card class="example-card" >
+        <img mat-card-image [src]="event.img_url" >
+        <mat-card-content >
+        <p class="titlestyle"><i><b>{{event.name}}</b></i></p>
+        <p>
+            {{event.anime_id}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions fxLayoutAlign="end">
+          <button mat-button class="btnReadmore" routerLink="">Read More</button>
+        </mat-card-actions>
+      </mat-card>
+</div>
+
+<iframe src="https://player.voxzer.org/view/7fdc8f237d18b8bee07f0602"  title="Boroto" width="1240" height="700">
+</iframe>

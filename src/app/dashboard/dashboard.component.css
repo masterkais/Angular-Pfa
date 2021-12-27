@@ -1,0 +1,14 @@
+body{
+    background-color: rgb(151,171,170);
+}
+img{
+    padding-top: 5%;
+    width: 25%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+h2{
+   text-align: center; 
+   color: rgb(255, 0, 0);
+}
